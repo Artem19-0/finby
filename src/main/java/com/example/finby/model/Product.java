@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -58,6 +59,6 @@ public class Product {
     @ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST })
     @JoinTable(name = "products_features", joinColumns = { @JoinColumn(name = "product_id") },
             inverseJoinColumns = {@JoinColumn(name = "feature_id") })
-    private Set<SpecialFeature> features;
+    private List<SpecialFeature> features;
 
 }

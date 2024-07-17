@@ -77,7 +77,8 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public List<Product> getAll() {
         List<Product> products = repository.findAll();
-        return products.isEmpty() ? Collections.emptyList() : products;    }
+        return products.isEmpty() ? Collections.emptyList() : products;
+    }
 
     @Override
     public Optional<Product> getById(int id) {
