@@ -76,7 +76,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> getAll() {
-        List<Product> products = (List<Product>) repository.findAll();
+        List<Product> products = repository.findAll();
         return products.isEmpty() ? Collections.emptyList() : products;    }
 
     @Override

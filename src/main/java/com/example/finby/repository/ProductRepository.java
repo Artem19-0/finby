@@ -1,12 +1,13 @@
 package com.example.finby.repository;
 
 import com.example.finby.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Integer> {
+public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     Product getByName(String name);
     @Query("select p from Product p where p.rating = (select max(p.rating) from Product p)")
